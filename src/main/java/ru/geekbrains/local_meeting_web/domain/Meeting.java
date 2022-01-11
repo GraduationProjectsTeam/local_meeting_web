@@ -28,7 +28,7 @@ public class Meeting {
     private String address;
 
     @NotNull
-    private String location;
+    private Location location;
 
     @NotNull
     private String title;

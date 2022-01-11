@@ -1,4 +1,3 @@
-/*
 create table meeting(
 meeting_id bigserial primary key,
 organizer text not null,
@@ -39,5 +38,5 @@ name text primary key
 
 foreign key (name) references meeting(location)
 );
-*/
+
 

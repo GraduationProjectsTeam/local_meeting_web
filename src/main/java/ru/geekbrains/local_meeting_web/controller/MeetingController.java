@@ -24,7 +24,7 @@ public class MeetingController {
     @GetMapping("/meetings/{id}")
     public Meeting getById(@PathVariable Long id){
         if(meetingService.getById(id).isPresent()){
-            return meetingService.getById(id);
+            return meetingService.getById(id).get();
         }else{
             throw new NullPointerException("There is no element with id "+id);
         }
@@ -42,11 +42,11 @@ public class MeetingController {
 
     @DeleteMapping("/meetings/{id}")
     public void deleteById(@PathVariable Long id){
-        return meetingService.deleteById(id);
+        meetingService.deleteById(id);
     }
 
     @DeleteMapping("/meetings/loc/{location}")
     public void deleteByLocation(@PathVariable String location){
-        return meetingService.deleteByLocation();
+        meetingService.deleteByLocation(location);
     }
 }
