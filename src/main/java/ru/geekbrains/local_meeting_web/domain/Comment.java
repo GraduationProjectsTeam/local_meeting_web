@@ -3,13 +3,8 @@ package ru.geekbrains.local_meeting_web.domain;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -18,7 +13,7 @@ import java.util.Date;
 @Data
 public class Comment {
     @Id
-    @Generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "meeting_id")
@@ -28,6 +23,7 @@ public class Comment {
     private Long author;
 
 //    TODO Date in service logic
+    //TODO Date Stamp
 
     @Column(name = "comment_date")
     private Date date;
@@ -38,5 +34,5 @@ public class Comment {
 
 //    TODO @JoinColumn
 //    TODO @JoinColumn
-    // TODO укороченную сущность, чтобы json не циклило
+// TODO укороченную сущность, чтобы json не циклило
 }

@@ -3,12 +3,9 @@ package ru.geekbrains.local_meeting_web.domain;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Calendar;
 
 @Entity
@@ -18,7 +15,7 @@ import java.util.Calendar;
 public class Meeting {
 
     @Id
-    @Generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -52,6 +49,6 @@ public class Meeting {
 
 
 // TODO @JoinColumn
-    // TODO @JoinColumn
-    //TODO укороченную сущность
+// TODO @JoinColumn
+//TODO укороченную сущность
 }
