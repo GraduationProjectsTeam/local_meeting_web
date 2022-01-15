@@ -9,11 +9,20 @@ import java.util.List;
 
 @Repository
 public interface MeetingRepository extends JpaRepository<Meeting, Long> {
+
     List<Meeting> getAll();
+
     List<Meeting> getByLocation(Location location);
+
     Meeting getById(Long id);
+
     Meeting add(Meeting meeting);
+
     Meeting updateById(Long id);
+
     void deleteById(Long id);
+
     void deleteByLocation(Location location);
+
+    void deleteByClientId(Long id);
 }

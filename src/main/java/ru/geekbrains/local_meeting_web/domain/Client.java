@@ -2,6 +2,7 @@ package ru.geekbrains.local_meeting_web.domain;
 
 import com.sun.istack.NotNull;
 import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,6 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,4 +65,4 @@ public class Client {
     }
 }
 
-//TODO black list for client
+//  TODO black list for client

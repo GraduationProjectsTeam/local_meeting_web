@@ -1,4 +1,43 @@
 package ru.geekbrains.local_meeting_web.service;
 
-public class ClientServiceImpl {
+import org.springframework.stereotype.Service;
+import ru.geekbrains.local_meeting_web.domain.Client;
+import ru.geekbrains.local_meeting_web.repository.ClientRepository;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ClientServiceImpl implements ClientService {
+
+    private ClientRepository clientRepository;
+
+    @Override
+    public List<Client> getAll() {
+        return clientRepository.getAll();
+    }
+
+    @Override
+    public Optional<Client> getById(Long id) {
+        return Optional.of(clientRepository.getById(id));
+    }
+
+    @Override
+    public Client add(Client client) {
+        return clientRepository.add(client);
+    }
+
+    @Override
+    public Optional<Client> updateById(Long id) {
+        return Optional.of(clientRepository.updateById(id));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        clientRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteByMail(String mail) {
+        clientRepository.deleteByMail(mail);
+    }
 }

@@ -19,7 +19,8 @@ public class Meeting {
     private Long id;
 
     @NotNull
-    private Long organizer;
+    @Column(name = "organizer")
+    private Long clientId;
 
     @NotNull
     private String address;
@@ -48,7 +49,7 @@ public class Meeting {
     private String link;
 
 
-// TODO @JoinColumn
-// TODO @JoinColumn
-//TODO укороченную сущность
+//   TODO @JoinColumn
+//   TODO @JoinColumn
+//   TODO укороченную сущность
 }

@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -20,10 +21,11 @@ public class Comment {
     private Long meetingId;
 
     @NotNull
-    private Long author;
+    @Column(name = "author")
+    private Long clientId;
 
 //    TODO Date in service logic
-    //TODO Date Stamp
+//    TODO Date Stamp
 
     @Column(name = "comment_date")
     private Date date;
@@ -34,5 +36,5 @@ public class Comment {
 
 //    TODO @JoinColumn
 //    TODO @JoinColumn
-// TODO укороченную сущность, чтобы json не циклило
+//    TODO укороченную сущность, чтобы json не циклило
 }
