@@ -11,11 +11,6 @@ public class ClientController {
 
     private ClientService clientService;
 
-    @GetMapping("/clients")
-    public List<Client> getAll() {
-        return clientService.getAll();
-    }
-
     @GetMapping("/clients/{id}")
     public Client getById(@PathVariable Long id) {
         if (clientService.getById(id).isPresent()) {
@@ -23,6 +18,20 @@ public class ClientController {
         } else {
             throw new NullPointerException("There is no element with id " + id);
         }
+    }
+
+    @GetMapping("/clients/mail/{mail}")
+    public Client getByMail(@PathVariable String mail){
+        if(clientService.getByMail(mail).isPresent()) {
+            return clientService.getByMail(mail).get();
+        }else{
+            throw new NullPointerException("There is no element with e-mail: " + mail);
+        }
+    }
+
+    @GetMapping("/clients")
+    public List<Client> getAll() {
+        return clientService.getAll();
     }
 
     @PostMapping("/clients")

@@ -7,9 +7,12 @@ import java.util.Optional;
 
 @Service
 public interface ClientService {
-    List<Client> getAll();
 
     Optional<Client> getById(Long id);
+
+    Optional<Client> getByMail(String mail);
+
+    List<Client> getAll();
 
     Client add(Client client);
 
@@ -18,4 +21,6 @@ public interface ClientService {
     void deleteById(Long id);
 
     void deleteByMail(String mail);
+
+    Long getId(Client client);
 }

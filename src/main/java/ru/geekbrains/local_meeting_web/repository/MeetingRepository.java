@@ -14,6 +14,8 @@ public interface MeetingRepository extends JpaRepository<Meeting, Long> {
 
     List<Meeting> getByLocation(Location location);
 
+    List<Meeting> getByClientId(Long id);
+
     Meeting getById(Long id);
 
     Meeting add(Meeting meeting);
@@ -25,4 +27,5 @@ public interface MeetingRepository extends JpaRepository<Meeting, Long> {
     void deleteByLocation(Location location);
 
     void deleteByClientId(Long id);
+
 }

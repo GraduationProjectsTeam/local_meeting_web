@@ -13,6 +13,7 @@ public class MeetingServiceImpl implements MeetingService{
 
     private MeetingRepository meetingRepository;
     private LocationRepository locationRepository;
+    private ClientService clientService;
 
     @Override
     public Optional<Meeting> getById(Long id) {
@@ -31,12 +32,12 @@ public class MeetingServiceImpl implements MeetingService{
 
     @Override
     public List<Meeting> getByClientId(Long id) {
-        return null;
+        return meetingRepository.getByClientId(id);
     }
 
     @Override
     public List<Meeting> getByClientMail(String mail) {
-        return null;
+        return getByClientId(clientService.getId(clientService.getByMail(mail).get()));
     }
 
     @Override
@@ -66,9 +67,10 @@ public class MeetingServiceImpl implements MeetingService{
 
     @Override
     public void deleteByClientMail(String clientMail) {
-        //TODO логика сделать клиента из е-мейла
         Long clientId = null;
-        meetingRepository.deleteByClientId(clientId);
+        if(clientService.getByMail(clientMail).isPresent()) {
+            meetingRepository.deleteByClientId(clientService.getId(clientService.getByMail(clientMail).get()));
+        }
     }
 }
 

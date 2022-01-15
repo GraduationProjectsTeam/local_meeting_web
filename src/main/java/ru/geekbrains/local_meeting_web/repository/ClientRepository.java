@@ -7,9 +7,12 @@ import java.util.List;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Long> {
-    List<Client> getAll();
 
     Client getById(Long id);
+
+    Client getByMail(String mail);
+
+    List<Client> getAll();
 
     Client add(Client client);
 
