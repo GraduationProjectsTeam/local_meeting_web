@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -38,11 +38,11 @@ public class Meeting {
     private String about;
 
     @Column(name = "registration_date")
-    private Calendar regDate;
+    private Date regDate;
 
     @NotNull
     @Column(name = "meeting_date")
-    private Calendar date;
+    private Date date;
 
     @Column(name = "meeting_beginning")
     private Double beginning;
@@ -53,6 +53,4 @@ public class Meeting {
     @Column(name = "image_link")
     private String link;
 
-
-//   TODO укороченную сущность
 }
