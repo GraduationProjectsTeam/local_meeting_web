@@ -4,12 +4,18 @@ import com.sun.istack.NotNull;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 public class Location {
+
     @NotNull
     private String name;
+
+    @OneToMany(mappedBy = "location")
+    List<Meeting> meetings;
 
     public Location(String name) {
         this.name = name;

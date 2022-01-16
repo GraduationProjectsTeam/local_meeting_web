@@ -1,4 +1,4 @@
-create table meeting(
+create if not exists table meeting(
 meeting_id bigserial primary key,
 organizer text not null,
 address text not null,
@@ -14,7 +14,7 @@ image_link text,
 foreign key (organizer) references client(id)
 );
 
-create table comment(
+create if not exists table comment(
 id bigserial primary key,
 meeting_id bigserial not null,
 author text not null,
@@ -25,7 +25,7 @@ foreign key (author) references client(id),
 foreign key (meeting_id) references meeting(id)
 );
 
-create table client(
+create if not exists table client(
 id bigserial primary key,
 name text,
 mail text,
@@ -33,7 +33,7 @@ login text,
 pass text,
 );
 
-create table location(
+create if not exists table location(
 name text primary key
 
 foreign key (name) references meeting(location)

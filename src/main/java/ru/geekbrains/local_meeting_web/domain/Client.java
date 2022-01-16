@@ -3,10 +3,8 @@ package ru.geekbrains.local_meeting_web.domain;
 import com.sun.istack.NotNull;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -23,6 +21,11 @@ public class Client {
     private int login;
     @NotNull
     private int pass;
+
+    @OneToMany(mappedBy = "organizer")
+    List<Meeting> meetings;
+    @OneToMany(mappedBy = "author")
+    List<Comment> comments;
 
     public Long getId() {
         return id;

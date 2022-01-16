@@ -19,13 +19,17 @@ public class Meeting {
     private Long id;
 
     @NotNull
+    @ManyToOne
+    @JoinColumn(name = "id")
     @Column(name = "organizer")
-    private Long clientId;
+    private Client client;
 
     @NotNull
     private String address;
 
     @NotNull
+    @ManyToOne
+    @JoinColumn(name = "name")
     private Location location;
 
     @NotNull
@@ -35,6 +39,7 @@ public class Meeting {
 
     @Column(name = "registration_date")
     private Calendar regDate;
+
     @NotNull
     @Column(name = "meeting_date")
     private Calendar date;
@@ -49,7 +54,5 @@ public class Meeting {
     private String link;
 
 
-//   TODO @JoinColumn
-//   TODO @JoinColumn
 //   TODO укороченную сущность
 }

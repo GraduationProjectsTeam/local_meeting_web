@@ -18,11 +18,12 @@ public class Comment {
     private Long id;
 
     @Column(name = "meeting_id")
-    private Long meetingId;
+    private Meeting meeting;
 
     @NotNull
+    @ManyToOne
     @Column(name = "author")
-    private Long clientId;
+    private Client client;
 
 //    TODO Date in service logic
 //    TODO Date Stamp
@@ -34,7 +35,6 @@ public class Comment {
     @Column(name = "comment_text")
     private String commentText;
 
-//    TODO @JoinColumn
-//    TODO @JoinColumn
+
 //    TODO укороченную сущность, чтобы json не циклило
 }
