@@ -1,0 +1,86 @@
+@import '../../style/variables.scss';
+
+.top {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    width: 100%;
+    padding: 20px 0;
+    background-color: $light;
+
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+
+    }
+
+
+
+    &-left,
+    &-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // flex: 3;
+        span {
+            text-transform: uppercase;
+            font-weight: 500;
+            &:hover {
+                color: $light-grey
+            }
+        }
+
+    }
+
+    // &-center {
+    //     flex: 6;
+    // }
+
+    &-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+
+    // &-icon {
+    //     font-size: 20px;
+    //     margin-right: 10px;
+    //     color: #444;
+    //     cursor: pointer;
+    // }
+
+    &-list {
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            margin-left: 20px;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+
+            // text-transform: uppercase;
+            &:hover {
+                color: $light-grey
+            }
+
+
+        }
+    }
+
+    &-search-icon {
+        font-size: 18px;
+        color: #666;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+}

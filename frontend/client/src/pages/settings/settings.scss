@@ -1,0 +1,82 @@
+@import '../../style/variables.scss';
+
+.settings {
+    display: flex;
+    gap: 50px;
+
+    &-wrapper {
+        flex: 9;
+    }
+
+    &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__update {
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 20px;
+            margin: 10px 0;
+
+        }
+
+        input {
+            color: $grey;
+            height: 30px;
+            border: none;
+            border-bottom: 1px solid $light-grey;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &-profile-img {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+    }
+
+    &-file {
+        display: none;
+    }
+
+    &-profile-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        color: $light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        cursor: pointer;
+        &:hover{
+            color:$light-grey;
+        }
+    }
+
+    .button {
+        width: 250px;
+    }
+
+}

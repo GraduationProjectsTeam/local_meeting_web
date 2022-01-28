@@ -1,0 +1,71 @@
+@import '../../style/variables.scss';
+
+.write {
+    width: 70vw;
+    &-form {
+        
+        // position: relative;
+        margin-top: 30px;
+    }
+
+    &-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        color: $light-grey;
+        border-radius: 50%;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    &-file {
+        width: fit-content;
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 20px;
+
+        &-desc {
+            font-size: 14px;
+            color: $light-grey;
+            cursor: pointer;
+        }
+    }
+
+
+    &-file-input {
+        display: none;
+    }
+
+
+    &-input {
+        width: 100%;
+        font-size: 30px;
+        border: none;
+
+        margin-bottom: 20px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-text {
+        font-size: 20px;
+    }
+
+
+    .button {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    &-img {
+        max-height: 350px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,94 @@
+@import '../../style/variables.scss';
+
+.single-post {
+    flex: 9;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        width: 100%;
+        max-height: 300px;
+        border-radius: 7px;
+        object-fit: cover;
+    }
+
+    &__title {
+        // text-align: center;
+        font-size: 28px;
+        font-weight: 500;
+        margin: 20px 0;
+
+
+        &-input {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 20px 0;
+            color: $light-grey;
+            border: none;
+            border-bottom: 1px solid $light-grey;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &__edit {
+        float: right;
+        font-size: 20px;
+    }
+
+
+    &__icon {
+        margin-left: 10px;
+        cursor: pointer;
+        color: $light-grey;
+
+        &:hover {
+            color: $dark
+        }
+
+        // &:first-child {
+        //     color: teal;
+        // }
+
+        // &:last-child {
+        //     color: tomato
+        // }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font: 16px/1.5 'Varela Round', sans-serif;
+        color: $brown;
+        margin-bottom: 20px;
+    }
+
+    &__desc {
+        color: $light-grey;
+        font-size: 18px;
+        line-height: 25px;
+
+        &-input {
+            border: none;
+            color: #666;
+            font-size: 18px;
+            line-height: 25px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .button {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+}

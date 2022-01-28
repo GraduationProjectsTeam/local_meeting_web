@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+ 
+@import './variables.scss';
+
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $dark;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+.success{
+    color:green;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+//  //buttons
+.button {
+    display: block;
+    /* margin: 0 auto; */
+    /* min-width: 101px; */
+    padding: 10px 20px;
+    color: $light;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s transform;
+    border: none;
+    background-color: $main-color;
+    cursor: pointer;
+
+    &:hover {
+        color: $light-grey;
+        // transform: translateY(-5px);
+    }
+
+    &:disabled {
+        filter: grayscale(.5);
+    }
+
+}
+
+.login-button.button {
+    background-color: $secondary-color;
+    margin: 20px auto;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: rgb(252, 173, 173);
+    }
+}
+
+img {
+    width: 100%;
+}
+
+//app
+.app {
+    &__wrapper {
+        width: calc(100% - 100px);
+        max-width: 1320px;
+        margin: 0 auto ;
+        position: relative;
+    }
+}
